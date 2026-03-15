@@ -29,8 +29,8 @@ def main():
     print("="*60)
 
     # 1. Load the Data
-    # Define absolute path to the dataset
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    # Define path to the dataset (stored alongside this script in predictor_app/)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
     data_path = os.path.join(base_dir, 'loan_approval_dataset.csv')
     print(f"[*] Loading dataset from: {data_path}")
     df = pd.read_csv(data_path)

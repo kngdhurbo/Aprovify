@@ -1,0 +1,75 @@
+HOW TO HOST APROVIFY ON RENDER (Free Tier)
+============================================
+A step-by-step guide for deploying this Django project on Render.
+
+PREREQUISITES:
+- Your project must be pushed to a GitHub repository
+  (e.g., https://github.com/kngdhurbo/Aprovify)
+- A free Render account at https://render.com
+
+=========================================================================
+
+STEP 1: Sign Up / Log In to Render
+Go to https://render.com and sign up using your GitHub account.
+This will allow Render to access your repositories directly.
+
+STEP 2: Create a New Web Service
+- From the Render Dashboard, click the "New +" button in the top right.
+- Select "Web Service".
+
+STEP 3: Connect Your GitHub Repository
+- Choose "Build and deploy from a Git repository".
+- Click "Connect" next to your GitHub account.
+- Find and select the "Aprovify" repository.
+- Click "Connect".
+
+STEP 4: Configure the Web Service
+Fill in the following settings:
+
+  Name:             aprovify
+  Region:           Choose the closest to you (e.g., Singapore or Oregon)
+  Branch:           main
+  Runtime:          Python 3
+  Build Command:    sh build.sh
+  Start Command:    gunicorn loan_system.wsgi:application
+
+STEP 5: Set Environment Variables
+Scroll down to the "Environment Variables" section and add:
+
+  Key: SECRET_KEY         Value: (any long random string, e.g., mysupersecretkey12345!)
+  Key: DEBUG              Value: False
+  Key: PYTHON_VERSION     Value: 3.12.3
+
+STEP 6: Select the Free Plan
+Under "Instance Type", select the "Free" tier.
+
+STEP 7: Click "Create Web Service"
+Render will now:
+  1. Pull your code from GitHub
+  2. Run build.sh (installs dependencies, trains the ML model, collects static files)
+  3. Start the Gunicorn WSGI server
+
+This process takes approximately 3-5 minutes on the first deploy.
+
+STEP 8: Access Your Live Application
+Once the deployment is complete and the status shows "Live",
+click the URL provided by Render (e.g., https://aprovify.onrender.com).
+
+Your Aprovify application is now live on the internet!
+
+=========================================================================
+
+NOTES:
+- The free tier may spin down after inactivity. The first request after
+  inactivity will take ~30 seconds to wake up.
+- Every time you push new code to the "main" branch on GitHub,
+  Render will automatically re-deploy the application.
+- The ML model is trained fresh during each deployment via build.sh,
+  so no .pkl file needs to be committed to the repository.
+
+TROUBLESHOOTING:
+- If the build fails, check the Render logs in your dashboard.
+- Make sure the dataset file (loan_approval_dataset.csv) is present
+  in the predictor_app/ directory in your GitHub repo.
+- If static files (CSS, images) are not loading, ensure WhiteNoise
+  is properly configured in settings.py (it should already be set up).
