@@ -1,0 +1,62 @@
+HOW TO PUSH THIS PROJECT TO GITHUB
+====================================
+A step-by-step guide for pushing the Aprovify project to a GitHub repository.
+
+PREREQUISITES:
+- Git must be installed on your system. Download from: https://git-scm.com/downloads
+- You must have a GitHub account and a repository created (e.g., https://github.com/kngdhurbo/Aprovify)
+- You must be logged into Git on your machine (via HTTPS credentials or SSH key)
+
+=========================================================================
+
+STEP 1: Open Terminal / Command Prompt
+Open PowerShell, Command Prompt, or Git Bash.
+
+STEP 2: Navigate to the Project Folder
+> cd c:\Users\HP\Desktop\dhruv\euphoria_training\loan_pred\loan_system
+
+STEP 3: Initialize a Git Repository
+This creates a new .git folder to start tracking your files:
+> git init
+
+STEP 4: Add All Project Files to Staging
+This stages every file (respecting .gitignore rules) for the commit:
+> git add -A
+
+STEP 5: Commit the Staged Files
+Create your first commit with a descriptive message:
+> git commit -m "Initial commit: Aprovify - Loan Approval Prediction System"
+
+STEP 6: Rename the Default Branch to "main"
+GitHub uses "main" as the default branch name:
+> git branch -M main
+
+STEP 7: Connect to Your Remote GitHub Repository
+Link your local repo to the remote GitHub URL:
+> git remote add origin https://github.com/kngdhurbo/Aprovify.git
+
+(If you get an error saying "remote 'origin' already exists", run this first:)
+> git remote remove origin
+(Then re-run the command above.)
+
+STEP 8: Push the Code to GitHub
+Upload your commit to the remote repository:
+> git push -u origin main
+
+(If the remote repo already has content like a default README, use force push:)
+> git push -u origin main --force
+
+STEP 9: Verify on GitHub
+Open your browser and go to:
+https://github.com/kngdhurbo/Aprovify
+You should see all your project files there!
+
+=========================================================================
+
+FOR FUTURE UPDATES:
+After making any changes to the code, repeat these 3 commands:
+> git add -A
+> git commit -m "Your descriptive commit message here"
+> git push
+
+That's it! Your project is live on GitHub.
