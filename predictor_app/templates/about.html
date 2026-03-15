@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Aprovify - About{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+            <h1 style="color: var(--primary-cyan); font-weight: 800; font-size: 3rem;">The Problem</h1>
+            <p class="lead text-muted mt-3">Financial institutions face immense risk when distributing loans. An
+                inaccurate assessment of a customer's creditworthiness leads to direct capital loss through defaults.
+                Conversely, over-strict policies reject safe borrowers, losing potential interest revenue.</p>
+            <p class="text-muted mt-3">Aprovify seeks to bridge this gap using Machine Learning to identify the subtle,
+                non-linear relationships in a user's financial profile that traditional scoring mechanisms miss.</p>
+        </div>
+        <div class="col-lg-6">
+            <div class="fintech-card">
+                <h3 style="color: var(--primary-cyan);">Business Objective</h3>
+                <ul class="text-muted mt-3" style="line-height: 1.8;">
+                    <li>Minimize False Positives(Approving a risky borrower).</li>
+                    <li>Maximize True Positives (Approving safe borrowers).</li>
+                    <li>Automate and speed-up the initial screening process.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="fintech-card p-5">
+                <div class="text-center mb-5">
+                    <h2 style="color: var(--primary-cyan); font-weight: 700;">The Machine Learning Approach</h2>
+                </div>
+
+                <h5 style="color: var(--secondary-peach);">1. Data Preprocessing & Leakage Prevention</h5>
+                <p class="text-muted">A strict Scikit-Learn `Pipeline` coupled with `ColumnTransformer` is used.
+                    Numerical features are scaled via `StandardScaler`, and categorical via `OrdinalEncoder`. By
+                    encapsulating these steps, we ensure that parameters (like mean/variance) are derived strictly from
+                    the training data, eliminating data leakage.</p>
+
+                <h5 class="mt-4" style="color: var(--secondary-peach);">2. Modeling Strategy</h5>
+                <p class="text-muted">We benchmarked Logistic Regression, KNN, Naive Bayes, Decision Trees, and SVM
+                    against a Random Forest Classifier. The Random Forest was chosen because it mitigates overfitting
+                    via bagging and handles multicollinearity robustly. It was validated using Stratified 5-Fold
+                    Cross-Validation to maintain class balance.</p>
+
+                <h5 class="mt-4" style="color: var(--secondary-peach);">3. Feature Importance</h5>
+                <p class="text-muted mb-0">The
+                    model identified metrics like <strong>CIBIL Score</strong>, <strong>Loan Term</strong>, and
+                    <strong>Loan Amount</strong> as the most critical determinants of default probability.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

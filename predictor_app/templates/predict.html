@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Aprovify - Predict{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 style="color: var(--primary-cyan); font-weight: 800; font-size: 3rem;">Risk Evaluation Form</h1>
+        <p class="text-muted">Enter the applicant's financial attributes exactly as requested.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="fintech-card p-4 p-md-5">
+                <form action="{% url 'predict' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row g-4">
+                        <!-- Demographics -->
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-users me-2"></i>Dependents</label>
+                            <input type="number" name="no_of_dependents" class="form-control" required min="0" max="10" placeholder="e.g. 2">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-graduation-cap me-2"></i>Education</label>
+                            <select name="education" class="form-select" required>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Not Graduate">Not Graduate</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-briefcase me-2"></i>Self Employed</label>
+                            <select name="self_employed" class="form-select" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <!-- Income & Loan -->
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-money-bill-wave me-2"></i>Annual Income</label>
+                            <input type="number" name="income_annum" class="form-control" required min="0" placeholder="e.g. 5000000">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-hand-holding-dollar me-2"></i>Loan Amount</label>
+                            <input type="number" name="loan_amount" class="form-control" required min="0" placeholder="e.g. 15000000">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-regular fa-calendar-days me-2"></i>Loan Term (Yrs)</label>
+                            <input type="number" name="loan_term" class="form-control" required min="1" placeholder="e.g. 12">
+                        </div>
+
+                        <!-- CIBIL & Assets -->
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-star me-2"></i>CIBIL Score</label>
+                            <input type="number" name="cibil_score" class="form-control" required min="300" max="900" placeholder="e.g. 750">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-house me-2"></i>Residential Assets</label>
+                            <input type="number" name="residential_assets_value" class="form-control" required min="-1000000" placeholder="e.g. 2400000">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><i class="fa-solid fa-building me-2"></i>Commercial Assets</label>
+                            <input type="number" name="commercial_assets_value" class="form-control" required min="0" placeholder="e.g. 17600000">
+                        </div>
+
+                        <!-- Luxury & Bank -->
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fa-solid fa-car me-2"></i>Luxury Assets Value</label>
+                            <input type="number" name="luxury_assets_value" class="form-control" required min="0" placeholder="e.g. 22700000">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fa-solid fa-building-columns me-2"></i>Bank Asset Value</label>
+                            <input type="number" name="bank_asset_value" class="form-control" required min="0" placeholder="e.g. 8000000">
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-primary-cyan btn-lg w-50">Generate Prediction</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

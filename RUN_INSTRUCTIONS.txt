@@ -1,0 +1,37 @@
+Aprovify: Loan Approval Prediction System
+==========================================
+Step-by-Step Guide to Run Locally on Port 8001
+
+Follow these instructions to run the project from scratch on your local machine.
+
+STEP 1: Open Your Terminal
+Open Command Prompt, PowerShell, or your terminal of choice.
+
+STEP 2: Navigate to the Project Directory
+Change your directory to the `loan_system` folder where the `manage.py` file is located:
+> cd c:\Users\HP\Desktop\dhruv\euphoria_training\loan_pred\loan_system
+
+STEP 3: Install Required Dependencies
+Ensure you have the necessary Python packages installed. You can install them using pip:
+> pip install django pandas scikit-learn plotly numpy joblib
+
+STEP 4: Run Database Migrations
+Initialize the SQLite database for Django:
+> python manage.py migrate
+
+STEP 5: Train the Machine Learning Model
+Before predictions can work, you need to train the Random Forest model. 
+This script reads the dataset, trains the model, and saves it as `model_robust.pkl`:
+> python predictor_app/train_model.py
+
+(Wait for it to print the success metrics and confirm the model is saved).
+
+STEP 6: Start the Django Development Server
+Run the local host specifically on port 8001:
+> python manage.py runserver 8001
+
+STEP 7: Access the Application
+Open your web browser (Chrome, Edge, Firefox, etc.) and go to the following URL:
+> http://127.0.0.1:8001/
+
+You can now navigate the site, read about the methodology, and use the "Predict" page to test out loan approval probabilities!

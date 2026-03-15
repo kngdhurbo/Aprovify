@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Aprovify - Contact{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 style="color: var(--primary-cyan); font-weight: 800;">Meet the Developers</h2>
+        <p class="text-muted">Aprovify was developed as an academic project showcasing the integration of advanced Machine Learning with a production-ready Web Framework.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <!-- Developer 1: Dhrubojyoti Hazra -->
+        <div class="col-md-6">
+            <div class="fintech-card p-5 text-center h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <img src="{% static 'profile_dhrubojyoti.jpg' %}" alt="Dhrubojyoti Hazra Avatar" class="rounded-circle shadow-sm mb-4" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--secondary-peach);">
+                    <h3 style="color: var(--primary-cyan); font-weight: 800;">Dhrubojyoti Hazra</h3>
+                    <p class="text-muted mb-2" style="font-size: 1.1rem; font-weight: 600;">BTech Computer Science and Engineering: Data Science student</p>
+                    <p class="text-muted mb-1"><small><i class="fa-solid fa-building-columns me-2"></i>Brainware University</small></p>
+                    <p class="text-muted"><small><i class="fa-solid fa-location-dot me-2"></i>Madhyamgram, Kolkata</small></p>
+                </div>
+                
+                <div class="d-flex justify-content-center gap-4 mt-4">
+                    <a href="https://github.com/kngdhurbo" target="_blank" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/dhrubojyoti-hazra-a71a9a325/" target="_blank" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:dhrubojyotihazra@gmail.com" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer 2: Isheeka Mukhopadhyay -->
+        <div class="col-md-6">
+            <div class="fintech-card p-5 text-center h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <img src="{% static 'profile_isheeka.jpg' %}" alt="Isheeka Mukhopadhyay Avatar" class="rounded-circle shadow-sm mb-4" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--secondary-peach);">
+                    <h3 style="color: var(--primary-cyan); font-weight: 800;">Isheeka Mukhopadhyay</h3>
+                    <p class="text-muted mb-2" style="font-size: 1.1rem; font-weight: 600;">BTech Computer Science and Engineering: Data Science student</p>
+                    <p class="text-muted mb-1"><small><i class="fa-solid fa-building-columns me-2"></i>Brainware University</small></p>
+                    <p class="text-muted"><small><i class="fa-solid fa-location-dot me-2"></i>Barasat, Kolkata</small></p>
+                </div>
+                
+                <div class="d-flex justify-content-center gap-4 mt-4">
+                    <a href="https://github.com/Isheeka1devs" target="_blank" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/isheeka-mukhopadhyay-6910aa326/" target="_blank" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:isheekamukhopadhyay@gmail.com" class="text-decoration-none" style="color: var(--primary-cyan); font-size: 1.8rem; transition: color 0.3s;" onmouseover="this.style.color='var(--secondary-peach)'" onmouseout="this.style.color='var(--primary-cyan)'"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

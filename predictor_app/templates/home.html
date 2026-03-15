@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Aprovify - Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="hero-heading"
+                    style="color: var(--primary-cyan); font-weight: 800; font-size: 3.5rem; margin-bottom: 1.5rem;">
+                    Loan Approval Prediction System</h1>
+                <p class="hero-sub text-muted" style="font-size: 1.25rem; line-height: 1.6;">Harnessing advanced Machine
+                    Learning to instantly evaluate credit risk. Aprovify secures financial institutions by predicting
+                    defaults with unparalleled precision.</p>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <a href="{% url 'predict' %}" class="btn btn-primary-cyan btn-lg px-4 shadow-sm"
+                        style="border-radius: 8px;">Start Prediction</a>
+                    <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-lg px-4"
+                        style="border-radius: 8px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-5">
+    <div class="text-center mb-5">
+        <h2 style="color: var(--primary-cyan); font-weight: 700;">Why Aprovify?</h2>
+        <p class="text-muted">A highly engineered solution for modern fintech.</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="fintech-card text-center h-100">
+                <div class="mb-4" style="color: var(--secondary-peach);">
+                    <i class="fa-solid fa-bolt fa-3x"></i>
+                </div>
+                <h4 style="color: var(--primary-cyan); font-weight: 600;">Instant Analysis</h4>
+                <p class="text-muted mb-0">Evaluate risk in milliseconds natively in the browser without exporting data.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="fintech-card text-center h-100">
+                <div class="mb-4" style="color: var(--primary-cyan);">
+                    <i class="fa-solid fa-network-wired fa-3x"></i>
+                </div>
+                <h4 style="color: var(--primary-cyan); font-weight: 600;">Robust Pipeline</h4>
+                <p class="text-muted mb-0">Built on a strict scikit-learn pipeline, preventing any data leakage between
+                    train/test constraints.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="fintech-card text-center h-100">
+                <div class="mb-4" style="color: var(--secondary-peach);">
+                    <i class="fa-solid fa-chart-bar fa-3x"></i>
+                </div>
+                <h4 style="color: var(--primary-cyan); font-weight: 600;">High Precision</h4>
+                <p class="text-muted mb-0">Stratified Random Forest model cross-validated specifically for imbalanced
+                    financial data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
