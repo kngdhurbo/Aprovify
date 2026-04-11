@@ -20,13 +20,12 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top py-2">
         <div class="container">
             <a class="navbar-brand p-0 m-0" href="{% url 'home' %}"
-                style="display: flex; align-items: center; overflow: visible;">
+                style="display: flex; align-items: center;">
                 <img src="{% static 'aprovify-logo.png' %}" alt="Aprovify Logo"
-                    style="height: 55px; width: auto; transform: scale(3.6); transform-origin: left center;"
-                    class="d-inline-block align-text-top">
+                    class="navbar-logo d-inline-block align-text-top">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target"
-                aria-controls="navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">

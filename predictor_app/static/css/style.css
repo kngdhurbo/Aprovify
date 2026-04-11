@@ -45,6 +45,40 @@ body {
     color: var(--primary-cyan) !important;
 }
 
+/* Navbar Logo and Mobile Optimization */
+.navbar-logo {
+    height: 35px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 992px) {
+    .navbar-logo {
+        height: 55px;
+        transform: scale(3.0); 
+        transform-origin: left center;
+    }
+    .navbar-brand {
+        margin-right: 6rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.5rem 1rem !important;
+    }
+    .navbar-collapse {
+        margin-top: 1rem;
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+        margin: 0.25rem 0;
+    }
+}
+
 /* Cards */
 .fintech-card {
     background-color: var(--card-bg);
